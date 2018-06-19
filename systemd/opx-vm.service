@@ -1,0 +1,14 @@
+[Unit]
+Description=Flush ebtables
+After=opx-nas.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/vm_dn_rules.sh
+RemainAfterExit=yes
+
+# Resource Limitations
+LimitCORE=infinity
+
+[Install]
+WantedBy=multi-user.target
